@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#176f68"><title>Vaccine Counseling V5.2 | คลินิกเด็กหมอนุชวดี</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div class="wrap"><div class="brand">คลินิกเด็กหมอนุชวดี • Vaccine Counseling V5.2</div><div class="hero">💉 เลือกอายุของลูก แล้วอ่านเฉพาะวัคซีนที่เกี่ยวข้อง</div><p class="lead">ใช้เวลาประมาณ 2–3 นาที • ไม่ต้องลงทะเบียน • ไม่เก็บข้อมูลผู้ป่วย</p></div></header>
+<main class="wrap">
+<section id="home" class="page on">
+<div class="card"><h2>👶 ลูกของคุณอายุเท่าไร?</h2><div id="ageGrid" class="agegrid"></div><div class="missed"><b>เคยขาดนัดวัคซีน หรือไม่แน่ใจว่าฉีดครบหรือไม่?</b><div class="missedbtns"><button class="missedbtn" onclick="missed(false)">ไม่ / ฉีดตามนัด</button><button class="missedbtn" onclick="missed(true)">ใช่ / ไม่แน่ใจ</button></div><div id="missedMsg" class="missedmsg">📘 กรุณานำสมุดวัคซีนมาให้คุณหมอตรวจ ไม่ควรใช้เว็บไซต์นี้คำนวณ catch-up schedule เอง</div></div></div>
+<div id="result" class="card result"><h2 id="ageTitle"></h2><div class="sectionlabel">① วัคซีนหลัก / วัคซีนที่เกี่ยวข้องช่วงนี้</div><div id="routineList"></div><div class="sectionlabel">② วัคซีนเพิ่มเติมที่พิจารณาได้</div><div id="extraList"></div><div id="annualBox"></div><div id="nextBox" class="next"></div><div class="book">📘 กรุณานำสมุดวัคซีนของลูกมาทุกครั้ง</div></div>
+<div class="card"><h2>🔎 ค้นหาวัคซีน</h2><div class="searchbox"><input id="searchInput" placeholder="เช่น ไอพีดี, หัด, เจอี, มือเท้าปาก, ไข้หวัดใหญ่..." oninput="searchVax()"></div><div id="searchResults" class="searchres"></div></div>
+<div class="card"><h2>ข้อมูลเพิ่มเติม</h2><div class="menu"><button class="menubtn" onclick="openPage('schedule')">📋 ตารางวัคซีนไทย<span>ภาพรวมแรกเกิดถึงวัยเรียน</span></button><button class="menubtn" onclick="openPage('care')">🌡️ หลังฉีดวัคซีน<span>อาการทั่วไปและสัญญาณอันตราย</span></button><button class="menubtn" onclick="openPage('contact')">🏥 ติดต่อคลินิก<span>โทรศัพท์ • Facebook • เวลาทำการ</span></button><button class="menubtn" onclick="openPage('refs')">📚 แหล่งอ้างอิง<span>แหล่งข้อมูลและวันที่ทบทวน</span></button></div></div>
+</section>
+<section id="schedule" class="page"><button class="back" onclick="home()">← กลับ</button><div class="card"><h2>📋 ตารางวัคซีนพื้นฐานของประเทศไทย</h2><p class="small">ใช้เป็นภาพรวมสำหรับผู้ปกครอง ส่วนการเลือกผลิตภัณฑ์และวัคซีนเพิ่มเติมให้แพทย์ประเมินจากอายุและประวัติ</p><div class="tablewrap"><table><thead><tr><th>อายุ</th><th>🇹🇭 วัคซีนพื้นฐาน</th><th>🟢 รูปแบบที่คลินิกใช้เป็นทางเลือก</th><th>⭐ เพิ่มเติมที่อาจพิจารณา</th></tr></thead><tbody id="tableRows"></tbody></table></div><div class="book">เว็บไซต์นี้ไม่คำนวณ catch-up schedule อัตโนมัติ</div></div></section>
+<section id="care" class="page"><button class="back" onclick="home()">← กลับ</button><div class="card"><h2>🌡️ หลังฉีดวัคซีน ดูแลอย่างไร?</h2><div class="info"><b>อาการที่พบได้บ่อย</b>ปวด บวม แดงบริเวณฉีด งอแง อ่อนเพลีย หรือมีไข้ต่ำ อาการส่วนใหญ่มักดีขึ้นเอง</div><div class="info"><b>ดูแลเบื้องต้น</b>ให้พักผ่อน ดื่มน้ำ/นมตามปกติ สังเกตอาการ และใช้ยาลดไข้เมื่อจำเป็นตามคำแนะนำและขนาดที่เหมาะกับน้ำหนัก</div><div class="info"><b>ควรรีบขอความช่วยเหลือ</b>หายใจลำบาก หน้าหรือคอบวม ชัก ซึมผิดปกติมาก อาการรุนแรงขึ้นรวดเร็ว หรือผู้ปกครองรู้สึกว่าเด็กผิดปกติอย่างชัดเจน</div></div></section>
+<section id="contact" class="page"><button class="back" onclick="home()">← กลับ</button><div class="card"><h2>🏥 ติดต่อคลินิกเด็กหมอนุชวดี</h2><div class="contactgrid"><a class="phone" href="tel:0649933499">📞 064-993-3499</a><a class="fb" href="#" onclick="alert('ต้นแบบ V5: จะเชื่อมลิงก์ Facebook Messenger จริงก่อนเผยแพร่');return false">💬 Facebook Messenger</a></div><p class="small">โทรศัพท์มีเจ้าหน้าที่รับสายในเวลาคลินิกเปิด • Messenger ฝากข้อความได้ แต่อาจไม่ได้ตอบทันที • ไม่มี LINE</p><div class="info"><b>เวลาทำการ</b>จันทร์–ศุกร์ 12:00–13:00 และ 17:00–20:00 น.<br>เสาร์–อาทิตย์ และวันหยุดนักขัตฤกษ์ 10:00–13:00 น.</div></div></section>
+<section id="refs" class="page"><button class="back" onclick="home()">← กลับ</button><div class="card"><h2>📚 แหล่งอ้างอิงและการทบทวน</h2><div class="info"><b>แนวทางหลัก</b>ตารางวัคซีนประเทศไทย พ.ศ. 2569 และคำแนะนำสมาคมโรคติดเชื้อในเด็กแห่งประเทศไทย (PIDST) พ.ศ. 2569</div><div class="info"><b>ข้อมูลประกอบ</b>WHO routine immunization recommendations และเอกสารกำกับผลิตภัณฑ์ที่เกี่ยวข้อง</div><div class="info"><b>ข้อมูลคลินิก</b>ใช้รูปแบบการให้วัคซีนจริงจาก WinClinic แบบสรุปไม่ระบุตัวบุคคล เพื่อช่วยจัดลำดับเนื้อหา ไม่ใช้แทนคำแนะนำทางการแพทย์</div><div class="review">ข้อมูลทางการแพทย์: ทบทวนล่าสุด สิงหาคม 2569 • ราคา: ตรวจสอบจากข้อมูลคลินิกก่อนเผยแพร่จริง</div></div></section>
+</main>
+<div id="modal" class="modal" onclick="if(event.target===this)closeModal()"><div class="sheet"><button class="close" onclick="closeModal()">ปิด</button><div id="modalBody"></div></div></div>
+<script src="ages.js"></script>
+<script src="details.js"></script>
+<script src="table.js"></script>
+<script src="app.js"></script>
+</body></html>
